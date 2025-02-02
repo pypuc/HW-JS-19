@@ -27,6 +27,38 @@ radios.forEach(radio => {
 });
 document.body.style.backgroundColor = document.querySelector('input[name="color"]:checked').value;
 
+// 4
+
+const nameInput = document.getElementById("name-input");
+const nameOutput = document.getElementById("name-output");
+const validationInput = document.getElementById("validation-input");
+nameInput.addEventListener("input", () => {
+    if (nameInput.value === "") {
+        nameOutput.textContent = "незнайомець";
+    } else {
+        nameOutput.textContent = nameInput.value;
+    }
+});
+validationInput.addEventListener("blur", () => {
+    const requiredLength = Number(validationInput.dataset.length);
+    if (validationInput.value.length === requiredLength) {
+        validationInput.style.borderColor = "green";
+    } else {
+        validationInput.style.borderColor = "red";
+    }
+});
+
+// 5 
+
+const fontSizeControl = document.getElementById("font-size-control");
+const text = document.getElementById("text");
+fontSizeControl.addEventListener("input", () => {
+    text.style.fontSize = fontSizeControl.value + "px";
+});
+
+
+
+
 
 
 
